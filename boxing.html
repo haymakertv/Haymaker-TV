@@ -6,150 +6,34 @@
     <title>BOXING ARCHIVE | HAYMAKER TV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --copper: #c58d6b;
-            --bg-black: #0a0a0a;
-            --card-bg: #111111;
-        }
+        :root { --copper: #c58d6b; --bg-black: #0a0a0a; --card-bg: #111111; }
+        body, html { margin: 0; padding: 0; background-color: var(--bg-black); font-family: 'Segoe UI', sans-serif; color: white; }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-black);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: white;
-            height: auto;
-            overflow-y: auto;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            background: #000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
+        /* NAV STYLES */
+        nav { background: #000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
         .logo-text { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: 1px; }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-left: 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+        .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--copper); }
 
-        /* HEADER SECTION */
-        .archive-header {
-            padding: 60px 5% 20px;
-            text-align: center;
-        }
-
-        .archive-header h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin: 0;
-            font-weight: 900;
-        }
-
-        .archive-header .category-tag {
-            color: var(--copper);
-            font-weight: bold;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* VIDEO GRID */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            padding: 40px 5% 100px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .video-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .video-card:hover {
-            border-color: var(--copper);
-            transform: translateY(-8px);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-info {
-            padding: 25px;
-        }
-
-        .video-info h3 {
-            margin: 0 0 12px 0;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-        .video-info p {
-            margin: 0;
-            color: #888;
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
+        /* GRID STYLES */
+        .archive-header { padding: 60px 5% 20px; text-align: center; }
+        .archive-header h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; font-weight: 900; }
+        .category-tag { color: var(--copper); font-weight: bold; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; padding: 40px 5% 100px; max-width: 1400px; margin: 0 auto; }
+        .video-card { background: var(--card-bg); border: 1px solid #222; border-radius: 4px; overflow: hidden; transition: 0.3s; }
+        .video-card:hover { border-color: var(--copper); transform: translateY(-8px); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-info { padding: 25px; }
+        .video-info h3 { margin: 0 0 12px 0; font-size: 1.1rem; text-transform: uppercase; color: #fff; }
+        .video-info p { margin: 0; color: #888; font-size: 0.85rem; line-height: 1.6; }
 
         /* FOOTER */
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            background: #050505;
-            border-top: 1px solid #111;
-        }
-
-        .footer-socials {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
+        footer { padding: 60px 0; text-align: center; background: #050505; border-top: 1px solid #111; }
+        .footer-socials { margin: 20px 0; display: flex; justify-content: center; gap: 25px; }
         .footer-socials a { color: #888; font-size: 1.5rem; transition: 0.3s; }
         .footer-socials a:hover { color: var(--copper); transform: translateY(-3px); }
-
         .legal-line { font-size: 0.7rem; color: #666; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .est { font-size: 0.7rem; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -194,6 +78,26 @@
 
         <div class="video-card">
             <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/-h0bQ7xMHaM" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>Justin Pauldo Training</h3>
+                <p>Inside the camp as Justin Pauldo prepares for his clash with Said Chino.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/ULd8QtXQAPQ" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>Robert Garcia Interview</h3>
+                <p>"I Hated Boxing" — A raw look at the mindset of a legendary trainer and former champ.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/Z5zsu8o00pU" allowfullscreen></iframe>
             </div>
             <div class="video-info">
@@ -214,22 +118,19 @@
     </div>
 
     <footer>
-        <div style="font-weight: 900; margin-bottom: 5px; font-size: 1.2rem;">
-            HAYMAKER<span style="color:var(--copper)">TV</span>&trade;
+        <div style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 20px;">
+            <img src="logo.png" alt="Haymaker TV Logo" style="height: 80px; width: auto;">
+            <span style="color: var(--copper); font-weight: 900; font-size: 1.2rem; margin-left: 5px; margin-top: 5px;">™</span>
         </div>
-        
         <div class="footer-socials">
             <a href="https://youtube.com/@haymaker_tv" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/haymaker.tv" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@haymakertv" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/share/19XEaqPiUk" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://www.facebook.com/haymaker.tv1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://open.spotify.com/show/4iu1m80IsfzB7FC6peapAd" target="_blank"><i class="fab fa-spotify"></i></a>
         </div>
-
-        <div class="legal-line">
-            &copy; 2025 Haymaker TV. All Rights Reserved.
-        </div>
-        <div class="est">Established in Houston, TX</div>
+        <div class="legal-line">© 2025 Haymaker TV. All Rights Reserved.</div>
+        <div style="font-size: 0.7rem; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px;">Established in Houston, TX</div>
     </footer>
 
 </body>
