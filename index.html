@@ -4,53 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAYMAKER TV | UNFILTERED. UNCUT. UNRIVALED.</title>
+    
+    <meta property="og:title" content="HAYMAKER TV | UNFILTERED. UNCUT. UNRIVALED.">
+    <meta property="og:description" content="Houston's home for raw combat sports interviews and coverage.">
+    <meta property="og:image" content="https://haymakertv.netlify.app/social-preview.png">
+    <meta property="og:url" content="https://haymakertv.netlify.app/">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { --teal: #5fb4c4; --copper: #c58d6b; --bg-black: #0a0a0a; --frame-grey: #1a1a1a; }
         body, html { margin: 0; padding: 0; background-color: var(--bg-black); font-family: 'Segoe UI', sans-serif; color: white; }
         
-        /* EXACT NAVIGATION FROM BOXING PAGE */
-        nav {
-            background: #000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
+        nav { background: #000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
         .logo-text { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: 1px; }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-left: 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+        .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--copper); }
 
-        /* MOBILE FIX */
-        @media (max-width: 600px) {
-            nav { padding: 15px 3%; }
-            .logo-text { font-size: 1.1rem; }
-            .nav-links a { margin-left: 10px; font-size: 0.7rem; }
+        .main-wrapper { display: flex; flex-direction: column; align-items: center; padding: 40px 5%; }
+        
+        /* RESPONSIVE SLIDESHOW FIX */
+        .slideshow-frame { 
+            position: relative; 
+            width: 100%; 
+            max-width: 900px; 
+            aspect-ratio: 16 / 9; /* This keeps the rectangle shape perfect on all screens */
+            background: var(--frame-grey); 
+            overflow: hidden; 
+            border-radius: 4px; 
+            border: 2px solid #333; 
+            margin-bottom: 50px; 
         }
 
-        /* MAIN CONTENT STYLES */
-        .main-wrapper { display: flex; flex-direction: column; align-items: center; padding: 40px 5%; }
-        .slideshow-frame { position: relative; width: 100%; max-width: 900px; height: 450px; background: var(--frame-grey); overflow: hidden; border-radius: 4px; border: 2px solid #333; margin-bottom: 50px; }
-        .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeEffect 25s infinite; }
+        .slide { 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+            opacity: 0; 
+            animation: fadeEffect 25s infinite; 
+        }
+        
         .slide:nth-child(1) { background-image: url('slide1.jpg'); animation-delay: 0s; }
         .slide:nth-child(2) { background-image: url('slide2.jpg'); animation-delay: 5s; }
         .slide:nth-child(3) { background-image: url('slide3.jpg'); animation-delay: 10s; }
         .slide:nth-child(4) { background-image: url('slide4.jpg'); animation-delay: 15s; }
         .slide:nth-child(5) { background-image: url('slide5.jpg'); animation-delay: 20s; }
+        
         @keyframes fadeEffect { 0% { opacity: 0; } 5% { opacity: 1; } 20% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
         
         .about-us-box { max-width: 800px; text-align: center; margin-bottom: 80px; }
@@ -58,7 +59,16 @@
         .about-us-box p { font-size: 1.15rem; line-height: 1.8; color: #ccc; margin-bottom: 25px; }
         .highlight { color: var(--copper); }
 
-        /* FOOTER */
+        /* MOBILE FIXES */
+        @media (max-width: 600px) {
+            nav { padding: 15px 3%; }
+            .logo-text { font-size: 1.1rem; }
+            .nav-links a { margin-left: 10px; font-size: 0.7rem; }
+            .about-us-box h1 { font-size: 1.8rem; }
+            .main-wrapper { padding: 20px 5%; }
+            .slideshow-frame { margin-bottom: 30px; }
+        }
+
         footer { padding: 60px 0; text-align: center; background: #050505; border-top: 1px solid #111; }
         .footer-socials { margin: 20px 0; display: flex; justify-content: center; gap: 25px; }
         .footer-socials a { color: #888; font-size: 1.5rem; transition: 0.3s; }
@@ -82,7 +92,11 @@
 
     <div class="main-wrapper">
         <div class="slideshow-frame">
-            <div class="slide"></div><div class="slide"></div><div class="slide:nth-child(3)"></div><div class="slide"></div><div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
         </div>
         
         <div class="about-us-box">
