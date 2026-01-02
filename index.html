@@ -8,11 +8,24 @@
     <style>
         :root { --teal: #5fb4c4; --copper: #c58d6b; --bg-black: #0a0a0a; --frame-grey: #1a1a1a; }
         body, html { margin: 0; padding: 0; background-color: var(--bg-black); font-family: 'Segoe UI', sans-serif; color: white; }
+        
+        /* NAVIGATION */
         nav { background: #000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
         .logo-text { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: 1px; }
         .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--copper); }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            nav { padding: 15px 3%; }
+            .logo-text { font-size: 1.2rem; }
+            .nav-links a { margin-left: 10px; font-size: 0.7rem; }
+            .about-us-box h1 { font-size: 1.8rem; }
+        }
+
         .main-wrapper { display: flex; flex-direction: column; align-items: center; padding: 40px 5%; }
+        
+        /* SLIDESHOW */
         .slideshow-frame { position: relative; width: 100%; max-width: 900px; height: 450px; background: var(--frame-grey); overflow: hidden; border-radius: 4px; border: 2px solid #333; margin-bottom: 50px; }
         .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeEffect 25s infinite; }
         .slide:nth-child(1) { background-image: url('slide1.jpg'); animation-delay: 0s; }
@@ -21,10 +34,13 @@
         .slide:nth-child(4) { background-image: url('slide4.jpg'); animation-delay: 15s; }
         .slide:nth-child(5) { background-image: url('slide5.jpg'); animation-delay: 20s; }
         @keyframes fadeEffect { 0% { opacity: 0; } 5% { opacity: 1; } 20% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
+        
         .about-us-box { max-width: 800px; text-align: center; margin-bottom: 80px; }
         .about-us-box h1 { font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 900; }
         .about-us-box p { font-size: 1.15rem; line-height: 1.8; color: #ccc; margin-bottom: 25px; }
         .highlight { color: var(--copper); }
+
+        /* FOOTER */
         footer { padding: 60px 0; text-align: center; background: #050505; border-top: 1px solid #111; }
         .footer-socials { margin: 20px 0; display: flex; justify-content: center; gap: 25px; }
         .footer-socials a { color: #888; font-size: 1.5rem; transition: 0.3s; }
@@ -33,32 +49,49 @@
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo-text">HAYMAKER<span style="color:var(--copper)">TV</span></a>
         <div class="nav-links">
-            <a href="index.html">Home</a><a href="boxing.html">Boxing</a><a href="mma.html">MMA</a><a href="contact.html">Contact Us</a>
+            <a href="index.html">Home</a>
+            <a href="boxing.html">Boxing</a>
+            <a href="mma.html">MMA</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </nav>
+
     <div class="main-wrapper">
         <div class="slideshow-frame">
-            <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
         </div>
+        
         <div class="about-us-box">
             <h1>UNFILTERED. <span class="highlight">UNCUT.</span> UNRIVALED.</h1>
             <p>Welcome to <span class="highlight">Haymaker TV</span>. Operating out of the heart of <strong>Houston, Texas</strong>, we are dedicated to bringing you the most raw and unfiltered coverage in combat sports.</p>
             <p>From championship rings to the intense world of the cage, our mission is to provide fans with exclusive interviews and a front-row seat to the action.</p>
         </div>
     </div>
+
     <footer>
-        <div style="font-weight: 900; margin-bottom: 5px; font-size: 1.2rem;">HAYMAKER<span style="color:var(--copper)">TV</span>&trade;</div>
+        <div style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 20px;">
+            <img src="logo.png" alt="Haymaker TV Logo" style="height: 80px; width: auto;">
+            <span style="color: var(--copper); font-weight: 900; font-size: 1.2rem; margin-left: 5px; margin-top: 5px;">™</span>
+        </div>
+
         <div class="footer-socials">
             <a href="https://youtube.com/@haymaker_tv" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/haymaker.tv" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@haymakertv" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/share/19XEaqPiUk" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://www.facebook.com/haymaker.tv1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://open.spotify.com/show/4iu1m80IsfzB7FC6peapAd" target="_blank"><i class="fab fa-spotify"></i></a>
         </div>
-        <div class="legal-line">&copy; 2025 Haymaker TV. All Rights Reserved.</div>
+        
+        <div class="legal-line">© 2025 Haymaker TV. All Rights Reserved.</div>
     </footer>
+
 </body>
 </html>
