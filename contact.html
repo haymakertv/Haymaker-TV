@@ -5,193 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACT | HAYMAKER TV</title>
     
-    <meta property="og:title" content="HAYMAKER TV | CONTACT">
-    <meta property="og:description" content="Houston's home for raw combat sports interviews and coverage.">
-    <meta property="og:image" content="https://haymakertv.netlify.app/social-preview.png">
-    <meta property="og:url" content="https://haymakertv.netlify.app/contact.html">
-    <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --teal: #5fb4c4;
-            --copper: #c58d6b;
-            --bg-black: #0a0a0a;
-            --card-grey: #151515;
-        }
+        :root { --teal: #5fb4c4; --copper: #c58d6b; --bg-black: #0a0a0a; --card-grey: #151515; }
+        body, html { margin: 0; padding: 0; background-color: var(--bg-black); font-family: 'Segoe UI', sans-serif; color: white; height: auto; }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-black);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: white;
-            height: auto;
-        }
-
-        /* NAVIGATION - Shared across all pages */
-        nav {
-            background: #000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
+        /* NAVIGATION */
+        nav { background: #000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
         .logo-text { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: 1px; }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-left: 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .nav-links a:hover { color: var(--copper); }
+        .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; font-weight: 600; }
 
         /* CONTACT LAYOUT */
-        .contact-container {
-            max-width: 1100px;
-            margin: 80px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-        }
+        .contact-container { max-width: 1100px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+        .contact-info h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 20px; font-weight: 900; line-height: 1; }
+        .contact-info p { color: #888; font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px; }
+        .info-item { display: flex; align-items: center; margin-bottom: 30px; }
+        .info-item i { font-size: 1.5rem; color: var(--copper); margin-right: 20px; width: 30px; text-align: center; }
+        .info-item h4 { margin: 0; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
 
-        .contact-info h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .contact-info p {
-            color: #888;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--copper);
-            margin-right: 20px;
-            width: 30px;
-            text-align: center;
-        }
-
-        .info-item h4 {
-            margin: 0;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .info-item p {
-            margin: 0;
-            color: white;
-            font-size: 1rem;
-        }
-
-        /* FORM STYLING */
-        .contact-form {
-            background: var(--card-grey);
-            padding: 45px;
-            border-radius: 8px;
-            border: 1px solid #222;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
+        /* FORM */
+        .contact-form { background: var(--card-grey); padding: 45px; border-radius: 8px; border: 1px solid #222; }
         .form-group { margin-bottom: 25px; }
-        .form-group label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 10px;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            background: #0a0a0a;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 4px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--copper); }
-
-        .submit-btn {
-            background: var(--copper);
-            color: black;
-            border: none;
-            padding: 18px 30px;
-            text-transform: uppercase;
-            font-weight: 900;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 4px;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover { background: #e0a37e; transform: translateY(-2px); }
+        .form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; color: #666; margin-bottom: 10px; font-weight: 700; }
+        input, select, textarea { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; color: white; border-radius: 4px; font-family: inherit; box-sizing: border-box; }
+        .submit-btn { background: var(--copper); color: black; border: none; padding: 18px 30px; text-transform: uppercase; font-weight: 900; width: 100%; cursor: pointer; border-radius: 4px; transition: 0.3s; }
 
         /* FOOTER */
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            background: #050505;
-            border-top: 1px solid #111;
-            margin-top: 100px;
-        }
+        footer { padding: 60px 0; text-align: center; background: #050505; border-top: 1px solid #111; margin-top: 100px; }
+        .footer-socials { margin: 20px 0; display: flex; justify-content: center; gap: 25px; }
+        .footer-socials a { color: #888; font-size: 1.5rem; transition: 0.3s; display: inline-block; }
+        .footer-socials a:hover { color: var(--copper); }
+        .legal-line { font-size: 0.7rem; color: #666; margin-top: 15px; text-transform: uppercase; }
 
-        .footer-socials {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .footer-socials a { color: #888; font-size: 1.5rem; transition: 0.3s; }
-        .footer-socials a:hover { color: var(--copper); transform: translateY(-3px); }
-
-        .legal-line { font-size: 0.7rem; color: #666; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .est { font-size: 0.7rem; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px; }
-
-        /* MOBILE FIXES - NOW MATCHES INDEX/BOXING */
+        /* MOBILE FIXES */
         @media (max-width: 600px) {
             nav { padding: 15px 3%; }
             .logo-text { font-size: 1.1rem; }
             .nav-links a { margin-left: 10px; font-size: 0.7rem; }
-            
-            .contact-container { 
-                grid-template-columns: 1fr; 
-                margin: 40px auto; 
-                padding: 0 15px;
-                gap: 40px;
-            }
+            .contact-container { grid-template-columns: 1fr; margin: 40px auto; padding: 0 15px; }
             .contact-info h1 { font-size: 2.5rem; }
             .contact-form { padding: 25px; }
         }
@@ -214,61 +65,27 @@
     <div class="contact-container">
         <div class="contact-info">
             <h1>GET IN <span style="color:var(--copper)">TOUCH</span></h1>
-            <p>Promoters, fighters, and sponsors—this is your direct line to Haymaker TV. Use the form to reach out regarding media coverage, interview requests, or partnerships.</p>
-            
-            <div class="info-item">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <h4>Email Us</h4>
-                    <p>arielr@haymakertv.com</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <i class="fas fa-location-dot"></i>
-                <div>
-                    <h4>Location</h4>
-                    <p>Houston, Texas</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <h4>Response Time</h4>
-                    <p>Usually within 24-48 Hours</p>
-                </div>
-            </div>
+            <p>Promoters, fighters, and sponsors—reach out regarding media coverage or partnerships.</p>
+            <div class="info-item"><i class="fas fa-envelope"></i><div><h4>Email Us</h4><p>arielr@haymakertv.tv</p></div></div>
+            <div class="info-item"><i class="fas fa-location-dot"></i><div><h4>Location</h4><p>Houston, Texas</p></div></div>
+            <div class="info-item"><i class="fas fa-clock"></i><div><h4>Response Time</h4><p>Usually within 24-48 Hours</p></div></div>
         </div>
 
         <div class="contact-form">
             <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
+                <div class="form-group"><label>Full Name</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>Email Address</label><input type="email" name="email" required></div>
                 <div class="form-group">
                     <label>Inquiry Reason</label>
                     <select name="reason" required>
                         <option value="">Select an option</option>
-                        <option>Interview Request</option>
-                        <option>Event Coverage</option>
-                        <option>Sponsorship / Advertising</option>
-                        <option>General Inquiry</option>
+                        <option value="Interview Request">Interview Request</option>
+                        <option value="Event Coverage">Event Coverage</option>
+                        <option value="Sponsorship">Sponsorship / Advertising</option>
+                        <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="6" placeholder="How can we help you?"></textarea>
-                </div>
-                
+                <div class="form-group"><label>Message</label><textarea name="message" rows="6" required></textarea></div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
@@ -285,13 +102,10 @@
             <a href="https://www.instagram.com/haymaker.tv" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@haymakertv" target="_blank"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/haymaker.tv1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://open.spotify.com/show/4iu1m80IsfzB7FC6peapAd" target="_blank"><i class="fab fa-spotify"></i></a>
         </div>
-
-        <div class="legal-line">
-            &copy; 2025 Haymaker TV. All Rights Reserved.
-        </div>
-        <div class="est">Established in Houston, TX</div>
+        <div class="legal-line">© 2025 Haymaker TV. All Rights Reserved.</div>
+        <div style="font-size: 0.7rem; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px;">Established in Houston, TX</div>
     </footer>
 
 </body>
